@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: dungeon tileset calciumtrice simple_46
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -52626017, guid: 31ff2ef820fd4124db334f218943a66a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3301887, g: 0.21649164, b: 0.21874152, a: 1}
   m_Transform:
     e00: 1
     e01: 0
