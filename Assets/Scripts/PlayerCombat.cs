@@ -7,6 +7,11 @@ public class PlayerCombat : MonoBehaviour
     public Animator animator;
 
 
+
+    void Start()
+    {
+
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -19,4 +24,9 @@ public class PlayerCombat : MonoBehaviour
     {
         animator.SetTrigger("Attack");
     }
+
+
+
+
+
 }
