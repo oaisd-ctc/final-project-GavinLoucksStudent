@@ -10,6 +10,7 @@ public class Slime : MonoBehaviour
     private float canAttack;
     EnemyBehavior enemyBehavior;
 
+
     public Animator animator;
 
     public Rigidbody2D rb;
@@ -18,6 +19,7 @@ public class Slime : MonoBehaviour
     void Start()
     {
         enemyBehavior = GetComponent<EnemyBehavior>();
+
     }
 
     void Update()
@@ -27,12 +29,14 @@ public class Slime : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
+        Debug.Log("Enter");
         if (other.gameObject.tag == "Player")
         {
             if (attackSpeed <= canAttack)
             {
                 animator.SetTrigger("Attack");
                 other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage);
+                Debug.Log("Player Hit " + attackDamage);
                 canAttack = 0;
             }
             else

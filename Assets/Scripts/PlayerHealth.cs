@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public bool awareOfPlayer { get; private set; }
+
+    public Vector2 directionToPlayer { get; private set; }
+
+    [SerializeField] private float awarenessDistance;
+
+    private Transform player;
 
     private int health = 0;
     [SerializeField] private int maxHealth;
 
+
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerMovement>().transform;
+    }
     void Start()
     {
         health = maxHealth;
@@ -31,6 +43,16 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        Vector2 enemyToPlayerVector = player.position - transform.position;
+        directionToPlayer = enemyToPlayerVector.normalized;
 
+        if (enemyToPlayerVector.magnitude <= awarenessDistance)
+        {
+            awareOfPlayer = true;
+        }
+        else
+        {
+            awareOfPlayer = false;
+        }
     }
 }
