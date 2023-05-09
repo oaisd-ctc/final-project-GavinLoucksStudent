@@ -6,7 +6,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
 
-
+    [SerializeField] AudioClip attackSfx;
 
     void Start()
     {
@@ -17,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
+            AudioSource.PlayClipAtPoint(attackSfx, Camera.main.transform.position);
         }
     }
 

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
-    [SerializeField] int health = 40;
-    [SerializeField] private int attackDamage = 10;
-    [SerializeField] private float attackSpeed = 1f;
+    [SerializeField] int health = 60;
+    [SerializeField] private int attackDamage = 20;
+    [SerializeField] private float attackSpeed = .3f;
     private float canAttack;
     EnemyBehavior enemyBehavior;
 
@@ -16,10 +16,12 @@ public class Slime : MonoBehaviour
     public Rigidbody2D rb;
 
     Vector2 movement;
+
+    PlayerHealth playerHealth;
     void Start()
     {
         enemyBehavior = GetComponent<EnemyBehavior>();
-
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     void Update()
@@ -30,7 +32,7 @@ public class Slime : MonoBehaviour
     private void OnCollisionStay2D(Collision2D other)
     {
         Debug.Log("Enter");
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && playerHealth.health > 0)
         {
             if (attackSpeed <= canAttack)
             {

@@ -12,13 +12,16 @@ public class PlayerHealth : MonoBehaviour
 
     private Transform player;
 
-    private int health = 0;
+    public int health = 0;
     [SerializeField] private int maxHealth;
+
+    PlayerMovement pm;
 
 
     private void Awake()
     {
         player = FindObjectOfType<PlayerMovement>().transform;
+        pm = GetComponent<PlayerMovement>();
     }
     void Start()
     {
@@ -36,6 +39,9 @@ public class PlayerHealth : MonoBehaviour
         else if (health <= 0)
         {
             health = 0;
+            pm.Death();
+            StartCoroutine(Wait());
+
             Debug.Log("Player Respawn");
         }
     }
@@ -54,5 +60,11 @@ public class PlayerHealth : MonoBehaviour
         {
             awareOfPlayer = false;
         }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+        FindObjectOfType<GameSessionController>().ProcessPlayerDeath();
     }
 }
