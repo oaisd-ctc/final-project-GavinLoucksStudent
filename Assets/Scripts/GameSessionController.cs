@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameSessionController : MonoBehaviour
 {
+
+    [SerializeField] Slider slider;
 
     void Awake()
     {
@@ -25,4 +29,6 @@ public class GameSessionController : MonoBehaviour
         SceneManager.LoadScene(0);
         Destroy(gameObject);
     }
+
+
 }

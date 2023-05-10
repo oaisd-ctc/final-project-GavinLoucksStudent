@@ -5,7 +5,7 @@ using UnityEngine;
 public class Slime : MonoBehaviour
 {
     [SerializeField] int health = 60;
-    [SerializeField] private int attackDamage = 20;
+    [SerializeField] private int attackDamage = 10;
     [SerializeField] private float attackSpeed = .3f;
     private float canAttack;
     EnemyBehavior enemyBehavior;
@@ -37,7 +37,7 @@ public class Slime : MonoBehaviour
             if (attackSpeed <= canAttack)
             {
                 animator.SetTrigger("Attack");
-                other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage);
+                other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(attackDamage);
                 Debug.Log("Player Hit " + attackDamage);
                 canAttack = 0;
             }

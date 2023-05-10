@@ -53,14 +53,14 @@ TagManager:
   - name: Wall Decor
     uniqueID: 3259891697
     locked: 0
-  - name: Enemy
-    uniqueID: 486336945
-    locked: 0
   - name: Table
     uniqueID: 1809578693
     locked: 0
   - name: Interactables
     uniqueID: 3358614135
+    locked: 0
+  - name: Enemy
+    uniqueID: 486336945
     locked: 0
   - name: Player
     uniqueID: 953174523

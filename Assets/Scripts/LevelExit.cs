@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LevelExit : MonoBehaviour
 {
+
+
+
+
     public void LevelChange()
     {
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         SceneManager.LoadScene(currentSceneIndex + 1);
 
     }

@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
 
     PlayerMovement pm;
 
+    public HealthBar healthBar;
+
 
     private void Awake()
     {
@@ -26,17 +28,23 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+
+        //health = PlayerPrefs.GetInt("healthAfterChange");
+        //FindObjectOfType<HealthBar>().slider.value = health;
     }
 
-    public void UpdateHealth(int mod)
+    public void UpdateHealth(int damageValue)
     {
-        health += mod;
+        health -= damageValue;
+        healthBar.SetHealth(health);
 
         if (health > maxHealth)
         {
             health = maxHealth;
+
         }
-        else if (health <= 0)
+        if (health <= 0)
         {
             health = 0;
             pm.Death();
@@ -49,6 +57,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+
+        //PlayerPrefs.SetInt("healthAfterChange", health);
+
+
         Vector2 enemyToPlayerVector = player.position - transform.position;
         directionToPlayer = enemyToPlayerVector.normalized;
 

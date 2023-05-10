@@ -227,8 +227,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   awarenessDistance: 0
-  health: 0
+  health: 100
   maxHealth: 100
+  healthBar: {fileID: 0}
 --- !u!114 &5903331694666844098
 MonoBehaviour:
   m_ObjectHideFlags: 0
