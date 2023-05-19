@@ -12,6 +12,8 @@ public class KeyDestroy : MonoBehaviour
     [SerializeField] AudioClip pickUpSFX;
 
     PlayerManager manager;
+
+
     private void Start()
     {
         manager = FindObjectOfType<PlayerManager>();

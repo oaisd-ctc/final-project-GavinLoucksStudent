@@ -4,20 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
-
-    public Slider slider;
-
+    GameSessionController gsc;
 
 
-
-    public void SetMaxHealth(int health)
+    private void Start()
     {
-        slider.maxValue = health;
-        slider.value = health;
+        gsc = FindObjectOfType<GameSessionController>();
     }
 
-    public void SetHealth(int health)
-    {
-        slider.value = health;
-    }
+
+
 }

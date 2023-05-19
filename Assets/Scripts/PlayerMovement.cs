@@ -15,14 +15,16 @@ public class PlayerMovement : MonoBehaviour
 
     PlayerHealth playerHealth;
 
+    GameSessionController gsc;
 
     void Awake()
     {
         playerHealth = GetComponent<PlayerHealth>();
+        gsc = FindObjectOfType<GameSessionController>();
     }
     void Update()
     {
-        if (playerHealth.health > 0)
+        if (gsc.health > 0)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");

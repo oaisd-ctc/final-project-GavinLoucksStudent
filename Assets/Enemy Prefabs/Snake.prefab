@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 279318251991347103}
   - component: {fileID: 279318251991347088}
   - component: {fileID: 279318251991347090}
-  - component: {fileID: 279318251991347102}
+  - component: {fileID: 3107985114551477128}
   - component: {fileID: 279318251991347101}
   - component: {fileID: 279318251991347100}
   - component: {fileID: 279318251991347099}
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 486336945
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 9
   m_Sprite: {fileID: -1103973981, guid: df4134a51226aef4199d4a380b8bc477, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -204,7 +204,7 @@ CircleCollider2D:
   m_Offset: {x: -0.01509361, y: -0.009517759}
   serializedVersion: 2
   m_Radius: 0.19369563
---- !u!114 &279318251991347102
+--- !u!114 &3107985114551477128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 60
   attackDamage: 10
-  attackSpeed: 0.5
+  attackSpeed: 0.3
   animator: {fileID: 279318251991347100}
   rb: {fileID: 1728440310}
 --- !u!114 &279318251991347101
@@ -233,11 +233,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c1412683dcaaa45ada73dff6ed9573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 5903331694666844216, guid: 346919660b618f448b0bdc5d7b8a5cba, type: 3}
+  target: {fileID: 0}
   speed: 200
   nextWaypointDistance: 0.5
   GFX: {fileID: 279318251991347088}
-  player: {fileID: 5903331694666844219, guid: 346919660b618f448b0bdc5d7b8a5cba, type: 3}
+  pm: {fileID: 0}
 --- !u!95 &279318251991347100
 Animator:
   serializedVersion: 5

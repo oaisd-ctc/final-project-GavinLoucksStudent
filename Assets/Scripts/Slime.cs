@@ -18,10 +18,13 @@ public class Slime : MonoBehaviour
     Vector2 movement;
 
     PlayerHealth playerHealth;
+
+    GameSessionController gsc;
     void Start()
     {
         enemyBehavior = GetComponent<EnemyBehavior>();
         playerHealth = FindObjectOfType<PlayerHealth>();
+        gsc = FindObjectOfType<GameSessionController>();
     }
 
     void Update()
@@ -32,12 +35,12 @@ public class Slime : MonoBehaviour
     private void OnCollisionStay2D(Collision2D other)
     {
         Debug.Log("Enter");
-        if (other.gameObject.tag == "Player" && playerHealth.health > 0)
+        if (other.gameObject.tag == "Player" && gsc.health > 0)
         {
             if (attackSpeed <= canAttack)
             {
                 animator.SetTrigger("Attack");
-                other.gameObject.GetComponent<PlayerHealth>().UpdateHealth(attackDamage);
+                gsc.UpdateHealth(attackDamage);
                 Debug.Log("Player Hit " + attackDamage);
                 canAttack = 0;
             }

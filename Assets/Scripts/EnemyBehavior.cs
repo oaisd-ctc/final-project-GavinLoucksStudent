@@ -23,11 +23,17 @@ public class EnemyBehavior : MonoBehaviour
 
     //DistanceCheck
     private float dis;
-    public GameObject player;
+    public PlayerManager pm;
     private float distanceBetween = 4.0f;
 
     void Start()
     {
+        if (target == null)
+        {
+            Debug.Log("Hi");
+            pm = GameObject.Find("Karthur").GetComponent<PlayerManager>();
+            target = pm.transform;
+        }
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         GFX = GetComponent<SpriteRenderer>();
@@ -55,7 +61,7 @@ public class EnemyBehavior : MonoBehaviour
     }
     void FixedUpdate()
     {
-        dis = Vector2.Distance(transform.position, player.transform.position);
+        dis = Vector2.Distance(transform.position, target.position);
 
 
 

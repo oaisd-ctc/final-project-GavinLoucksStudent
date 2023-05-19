@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 public class LevelExit : MonoBehaviour
 {
 
+    private void Awake()
+    {
 
+    }
 
 
     public void LevelChange()
     {
+
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 

@@ -13,18 +13,19 @@ public class DoorController : MonoBehaviour
     public bool isOpen;
 
     public Animator animator;
+    PlayerManager manager;
     void Start()
     {
         bc = GetComponent<BoxCollider2D>();
-
+        manager = FindObjectOfType<PlayerManager>();
 
     }
 
-    public void OpenDoor(GameObject obj)
+    public void OpenDoor()
     {
         if (!isOpen)
         {
-            PlayerManager manager = obj.GetComponent<PlayerManager>();
+
             if (manager)
             {
                 if (manager.keyCount > 0)
