@@ -24,7 +24,7 @@ public class Boss : MonoBehaviour
     GameSessionController gsc;
 
 
-    [SerializeField] PlayerManager pm;
+    PlayerManager pm;
 
 
     [SerializeField] GameObject fireball;
@@ -34,17 +34,13 @@ public class Boss : MonoBehaviour
 
         eb = FindObjectOfType<EnemyBehavior>();
         gsc = FindObjectOfType<GameSessionController>();
-
+        pm = GameObject.Find("Karthur").GetComponent<PlayerManager>();
 
     }
 
 
     void Update()
     {
-        if (pm == null)
-        {
-            pm = FindObjectOfType<PlayerManager>();
-        }
     }
 
     public void CanBeAttacked()
